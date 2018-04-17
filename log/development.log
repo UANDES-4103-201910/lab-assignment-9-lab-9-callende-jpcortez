@@ -1016,3 +1016,200 @@ Processing by RegistrationController#new as HTML
 Completed 200 OK in 44ms (Views: 39.8ms | ActiveRecord: 0.7ms)
 
 
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "fjborie@miuandes.cl"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "dbeckdorf@miuandes.cl"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "mrgarcia1@miuandes.cl"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "places" ("name", "address", "capacity", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Estadio Nacional Julio Martínez Prádanos"], ["address", "Av. Grecia 2001"], ["capacity", 50000], ["created_at", "2018-04-17 02:56:55.379576"], ["updated_at", "2018-04-17 02:56:55.379576"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "places" ("name", "address", "capacity", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Teatro Nacional Chileno"], ["address", "San Diego 850"], ["capacity", 5000], ["created_at", "2018-04-17 02:56:55.382294"], ["updated_at", "2018-04-17 02:56:55.382294"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "events" WHERE "events"."place_id" = 3 AND "events"."start_date" = ?[0m  [["start_date", "2019-05-15"]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "events" ("name", "start_date", "place_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "ICPC 2018"], ["start_date", "2019-05-15"], ["place_id", 3], ["created_at", "2018-04-17 02:56:55.403352"], ["updated_at", "2018-04-17 02:56:55.403352"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "events" WHERE "events"."place_id" = 3 AND "events"."start_date" = ?[0m  [["start_date", "2019-05-20"]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "events" ("name", "start_date", "place_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Facebook Hackathon 2018"], ["start_date", "2019-05-20"], ["place_id", 3], ["created_at", "2018-04-17 02:56:55.406743"], ["updated_at", "2018-04-17 02:56:55.406743"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "events" WHERE "events"."place_id" = 4 AND "events"."start_date" = ?[0m  [["start_date", "2019-06-25"]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "events" ("name", "start_date", "place_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Lollapalooza 2018"], ["start_date", "2019-06-25"], ["place_id", 4], ["created_at", "2018-04-17 02:56:55.409468"], ["updated_at", "2018-04-17 02:56:55.409468"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "events" WHERE "events"."place_id" = 4 AND "events"."start_date" = ?[0m  [["start_date", "2019-06-30"]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "events" ("name", "start_date", "place_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Festival de Viña 2018"], ["start_date", "2019-06-30"], ["place_id", 4], ["created_at", "2018-04-17 02:56:55.412434"], ["updated_at", "2018-04-17 02:56:55.412434"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "tickets" ("price", "event_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["price", 5000], ["event_id", 5], ["created_at", "2018-04-17 02:56:55.424988"], ["updated_at", "2018-04-17 02:56:55.424988"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "tickets" ("price", "event_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["price", 5000], ["event_id", 5], ["created_at", "2018-04-17 02:56:55.427612"], ["updated_at", "2018-04-17 02:56:55.427612"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "tickets" ("price", "event_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["price", 5000], ["event_id", 5], ["created_at", "2018-04-17 02:56:55.430173"], ["updated_at", "2018-04-17 02:56:55.430173"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "tickets" ("price", "event_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["price", 5000], ["event_id", 6], ["created_at", "2018-04-17 02:56:55.432861"], ["updated_at", "2018-04-17 02:56:55.432861"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "tickets" ("price", "event_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["price", 6000], ["event_id", 6], ["created_at", "2018-04-17 02:56:55.435478"], ["updated_at", "2018-04-17 02:56:55.435478"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "tickets" ("price", "event_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["price", 6000], ["event_id", 6], ["created_at", "2018-04-17 02:56:55.438098"], ["updated_at", "2018-04-17 02:56:55.438098"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "tickets" ("price", "event_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["price", 6000], ["event_id", 7], ["created_at", "2018-04-17 02:56:55.440701"], ["updated_at", "2018-04-17 02:56:55.440701"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "tickets" ("price", "event_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["price", 6000], ["event_id", 7], ["created_at", "2018-04-17 02:56:55.443218"], ["updated_at", "2018-04-17 02:56:55.443218"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "tickets" ("price", "event_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["price", 4000], ["event_id", 7], ["created_at", "2018-04-17 02:56:55.445559"], ["updated_at", "2018-04-17 02:56:55.445559"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "tickets" ("price", "event_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["price", 4000], ["event_id", 8], ["created_at", "2018-04-17 02:56:55.447596"], ["updated_at", "2018-04-17 02:56:55.447596"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "tickets" ("price", "event_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["price", 4000], ["event_id", 8], ["created_at", "2018-04-17 02:56:55.449723"], ["updated_at", "2018-04-17 02:56:55.449723"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "tickets" ("price", "event_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["price", 4000], ["event_id", 8], ["created_at", "2018-04-17 02:56:55.451704"], ["updated_at", "2018-04-17 02:56:55.451704"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "tickets" ("price", "event_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["price", 8000], ["event_id", 5], ["created_at", "2018-04-17 02:56:55.454105"], ["updated_at", "2018-04-17 02:56:55.454105"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "tickets" ("price", "event_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["price", 8000], ["event_id", 6], ["created_at", "2018-04-17 02:56:55.456619"], ["updated_at", "2018-04-17 02:56:55.456619"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "tickets" ("price", "event_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["price", 8000], ["event_id", 7], ["created_at", "2018-04-17 02:56:55.459143"], ["updated_at", "2018-04-17 02:56:55.459143"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "tickets" ("price", "event_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["price", 8000], ["event_id", 8], ["created_at", "2018-04-17 02:56:55.461650"], ["updated_at", "2018-04-17 02:56:55.461650"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "tickets" ("price", "event_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["price", 9000], ["event_id", 5], ["created_at", "2018-04-17 02:56:55.464096"], ["updated_at", "2018-04-17 02:56:55.464096"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mEvent Load (0.1ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "tickets" ("price", "event_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["price", 9000], ["event_id", 6], ["created_at", "2018-04-17 02:56:55.466431"], ["updated_at", "2018-04-17 02:56:55.466431"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "fjborie@miuandes.cl"], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "user_tickets" ("ticket_id", "time", "paid", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["ticket_id", 19], ["time", "2018-04-17 02:56:55.469415"], ["paid", "t"], ["created_at", "2018-04-17 02:56:55.479140"], ["updated_at", "2018-04-17 02:56:55.479140"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "dbeckdorf@miuandes.cl"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "user_tickets" ("ticket_id", "time", "paid", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["ticket_id", 20], ["time", "2018-04-17 02:56:55.482227"], ["paid", "t"], ["created_at", "2018-04-17 02:56:55.484197"], ["updated_at", "2018-04-17 02:56:55.484197"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "mrgarcia1@miuandes.cl"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "user_tickets" ("ticket_id", "time", "paid", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["ticket_id", 21], ["time", "2018-04-17 02:56:55.486190"], ["paid", "t"], ["created_at", "2018-04-17 02:56:55.487937"], ["updated_at", "2018-04-17 02:56:55.487937"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "fjborie@miuandes.cl"], ["LIMIT", 1]]
+  [1m[35mSQL (7.1ms)[0m  [1m[32mINSERT INTO "user_tickets" ("ticket_id", "time", "paid", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["ticket_id", 22], ["time", "2018-04-17 02:56:55.489765"], ["paid", "t"], ["created_at", "2018-04-17 02:56:55.491274"], ["updated_at", "2018-04-17 02:56:55.491274"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "dbeckdorf@miuandes.cl"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "user_tickets" ("ticket_id", "time", "paid", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["ticket_id", 23], ["time", "2018-04-17 02:56:55.500042"], ["paid", "t"], ["created_at", "2018-04-17 02:56:55.501618"], ["updated_at", "2018-04-17 02:56:55.501618"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "mrgarcia1@miuandes.cl"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "user_tickets" ("ticket_id", "time", "paid", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["ticket_id", 24], ["time", "2018-04-17 02:56:55.503337"], ["paid", "t"], ["created_at", "2018-04-17 02:56:55.504644"], ["updated_at", "2018-04-17 02:56:55.504644"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "fjborie@miuandes.cl"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "user_tickets" ("ticket_id", "time", "paid", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["ticket_id", 25], ["time", "2018-04-17 02:56:55.506304"], ["paid", "t"], ["created_at", "2018-04-17 02:56:55.507713"], ["updated_at", "2018-04-17 02:56:55.507713"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "dbeckdorf@miuandes.cl"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "user_tickets" ("ticket_id", "time", "paid", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["ticket_id", 26], ["time", "2018-04-17 02:56:55.509373"], ["paid", "t"], ["created_at", "2018-04-17 02:56:55.510669"], ["updated_at", "2018-04-17 02:56:55.510669"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "mrgarcia1@miuandes.cl"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "user_tickets" ("ticket_id", "time", "paid", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["ticket_id", 27], ["time", "2018-04-17 02:56:55.512453"], ["paid", "t"], ["created_at", "2018-04-17 02:56:55.514320"], ["updated_at", "2018-04-17 02:56:55.514320"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "fjborie@miuandes.cl"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "user_tickets" ("ticket_id", "time", "paid", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["ticket_id", 28], ["time", "2018-04-17 02:56:55.516164"], ["paid", "t"], ["created_at", "2018-04-17 02:56:55.517601"], ["updated_at", "2018-04-17 02:56:55.517601"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "dbeckdorf@miuandes.cl"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "user_tickets" ("ticket_id", "time", "paid", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["ticket_id", 29], ["time", "2018-04-17 02:56:55.519343"], ["paid", "t"], ["created_at", "2018-04-17 02:56:55.521186"], ["updated_at", "2018-04-17 02:56:55.521186"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "mrgarcia1@miuandes.cl"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "user_tickets" ("ticket_id", "time", "paid", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["ticket_id", 30], ["time", "2018-04-17 02:56:55.523116"], ["paid", "t"], ["created_at", "2018-04-17 02:56:55.524686"], ["updated_at", "2018-04-17 02:56:55.524686"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-04-16 23:57:05 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"sign_in"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 15ms (ActiveRecord: 0.7ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=sign_in):
+  
+app/controllers/users_controller.rb:45:in `set_user'
+Started GET "/users" for 127.0.0.1 at 2018-04-16 23:57:09 -0300
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (10.4ms)
+Completed 200 OK in 239ms (Views: 236.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2018-04-16 23:57:10 -0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 27ms (Views: 22.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-04-16 23:57:14 -0300
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 25ms (Views: 21.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-04-16 23:58:12 -0300
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 23ms (Views: 20.3ms | ActiveRecord: 0.2ms)
+
+
