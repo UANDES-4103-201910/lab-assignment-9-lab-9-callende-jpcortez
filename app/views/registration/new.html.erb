@@ -1,0 +1,25 @@
+ 
+<%= form_for(User.new, html: { multipart: true }) do |f| %>
+	<div class="form-group">
+	    <%= f.label :name, "Name" %>
+	    <%= f.text_field :name %>
+	</div>
+	<div class="form-group">
+	    <%= f.label :last_name, "Last Name" %>
+	    <%= f.text_field :last_name %>
+	</div>
+	<div class="form-group">
+	    <%= f.label :email %>
+	    <%= f.text_field :email %>
+	</div>
+	<div class="form-group">
+	    <%= f.label :password, "Password" %>
+	    <% if @minimum_password_length %>
+	        <em>(<%= @minimum_password_length %> caracteres mínimo)</em>
+	    <% end %><br/>
+	    <%= f.password_field :password, autocomplete: "off" %>
+	</div>
+	<div class="actions">
+	    <%= f.submit "Sign in" %>
+	</div>
+<% end %>

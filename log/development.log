@@ -819,3 +819,185 @@ FOREIGN KEY ("ticket_id")
   [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
   [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "user_tickets" ("user_id", "ticket_id", "time", "paid", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["user_id", 3], ["ticket_id", 12], ["time", "2018-04-10 02:53:40.265551"], ["paid", "t"], ["created_at", "2018-04-10 02:53:40.266149"], ["updated_at", "2018-04-10 02:53:40.266149"]]
   [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_events_on_place_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_events_on_place_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_tickets_on_event_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_tickets_on_event_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_user_tickets_on_ticket_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_user_tickets_on_ticket_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_user_tickets_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_user_tickets_on_user_id' AND type='index'
+[0m
+Started GET "/" for 127.0.0.1 at 2018-04-16 21:49:12 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb within layouts/application
+  Rendered application/index.html.erb within layouts/application (146.6ms)
+Completed 500 Internal Server Error in 165ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `user' for #<#<Class:0x007fd89b60a448>:0x007fd89b710428>):
+    1: <%= link_to 'Show', user %>
+  
+app/views/application/index.html.erb:1:in `_app_views_application_index_html_erb___262620266345322086_70284164284660'
+Started GET "/" for 127.0.0.1 at 2018-04-16 21:49:20 -0300
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb within layouts/application
+  Rendered application/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 631ms (Views: 628.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2018-04-16 21:49:22 -0300
+Processing by RegistrationController#new as HTML
+  Rendering registration/new.html.erb within layouts/application
+  Rendered registration/new.html.erb within layouts/application (185.2ms)
+Completed 500 Internal Server Error in 194ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `flash_messages' for #<#<Class:0x007fd8a3878c40>:0x007fd8a3883348>):
+    1: <%= flash_messages %>
+    2:  
+    3: <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { multipart: true }) do |f| %>
+    4: 	<div class="form-group">
+  
+app/views/registration/new.html.erb:1:in `_app_views_registration_new_html_erb___595369358944707394_70284216617580'
+Started GET "/" for 127.0.0.1 at 2018-04-16 21:49:29 -0300
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb within layouts/application
+  Rendered application/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 20ms (Views: 17.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/log_in" for 127.0.0.1 at 2018-04-16 21:49:30 -0300
+Processing by SessionController#new as HTML
+  Rendering session/new.html.erb within layouts/application
+  Rendered session/new.html.erb within layouts/application (194.6ms)
+Completed 500 Internal Server Error in 204ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `resource' for #<#<Class:0x007fd8a2d16870>:0x007fd8a2d061a0>):
+    1:  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    2:   <div class="form-group">
+    3:     <%= f.label :email,"correo electrónico" %><br />
+    4:     <%= f.email_field :email, autofocus: true  %>
+  
+app/views/session/new.html.erb:1:in `_app_views_session_new_html_erb___4398718684967447108_70284210650900'
+Started GET "/log_in" for 127.0.0.1 at 2018-04-16 21:50:03 -0300
+Processing by SessionController#new as HTML
+  Rendering session/new.html.erb within layouts/application
+  Rendered session/new.html.erb within layouts/application (27.7ms)
+Completed 200 OK in 49ms (Views: 45.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-16 21:50:05 -0300
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb within layouts/application
+  Rendered application/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 20ms (Views: 17.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-16 21:54:12 -0300
+Processing by ApplicationController#index as HTML
+  Rendering application/index.html.erb within layouts/application
+  Rendered application/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 17ms (Views: 15.1ms)
+
+
+Started GET "/log_in" for 127.0.0.1 at 2018-04-16 21:54:14 -0300
+Processing by SessionController#new as HTML
+  Rendering session/new.html.erb within layouts/application
+  Rendered session/new.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 24ms (Views: 20.0ms)
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2018-04-16 21:54:17 -0300
+Processing by RegistrationController#new as HTML
+  Rendering registration/new.html.erb within layouts/application
+  Rendered registration/new.html.erb within layouts/application (136.4ms)
+Completed 500 Internal Server Error in 147ms
+
+
+  
+ActionView::Template::Error (undefined local variable or method `flash_messages' for #<#<Class:0x007fd8a2cfd4b0>:0x007fd8a2cf4fe0>):
+    1: <%= flash_messages %>
+    2:  
+    3: <%= form_for(User.new, html: { multipart: true }) do |f| %>
+    4: 	<div class="form-group">
+  
+app/views/registration/new.html.erb:1:in `_app_views_registration_new_html_erb___595369358944707394_70284210599160'
+Started GET "/sign_in" for 127.0.0.1 at 2018-04-16 21:54:37 -0300
+Processing by RegistrationController#new as HTML
+  Rendering registration/new.html.erb within layouts/application
+  Rendered registration/new.html.erb within layouts/application (21.3ms)
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 0.8ms)
+
+
+  
+ActionView::Template::Error (undefined method `is_company' for #<User:0x007fd89bfc5848>):
+    2: <%= form_for(User.new, html: { multipart: true }) do |f| %>
+    3: 	<div class="form-group">
+    4: 	    <%= f.label :is_company, "Eres una empresa?" %>
+    5: 	    <%= f.check_box :is_company, value: params[:is_company] %>
+    6: 	</div>
+    7: 	<div class="form-group">
+    8: 	    <%= f.label :name, "Nombre" %>
+  
+app/views/registration/new.html.erb:5:in `block in _app_views_registration_new_html_erb___595369358944707394_70284216683020'
+app/views/registration/new.html.erb:2:in `_app_views_registration_new_html_erb___595369358944707394_70284216683020'
+Started GET "/sign_in" for 127.0.0.1 at 2018-04-16 21:54:40 -0300
+Processing by RegistrationController#new as HTML
+  Rendering registration/new.html.erb within layouts/application
+  Rendered registration/new.html.erb within layouts/application (9.0ms)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `is_company' for #<User:0x007fd89bf1d670>):
+    2: <%= form_for(User.new, html: { multipart: true }) do |f| %>
+    3: 	<div class="form-group">
+    4: 	    <%= f.label :is_company, "Eres una empresa?" %>
+    5: 	    <%= f.check_box :is_company, value: params[:is_company] %>
+    6: 	</div>
+    7: 	<div class="form-group">
+    8: 	    <%= f.label :name, "Nombre" %>
+  
+app/views/registration/new.html.erb:5:in `block in _app_views_registration_new_html_erb___595369358944707394_70284203942760'
+app/views/registration/new.html.erb:2:in `_app_views_registration_new_html_erb___595369358944707394_70284203942760'
+Started GET "/sign_in" for 127.0.0.1 at 2018-04-16 21:56:39 -0300
+Processing by RegistrationController#new as HTML
+  Rendering registration/new.html.erb within layouts/application
+  Rendered registration/new.html.erb within layouts/application (8.3ms)
+Completed 200 OK in 29ms (Views: 26.4ms | ActiveRecord: 0.0ms)
+
+

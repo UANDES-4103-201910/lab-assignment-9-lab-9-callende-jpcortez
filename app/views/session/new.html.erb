@@ -1,0 +1,15 @@
+ <%= form_for(:session, url: login_path) do |f| %>
+  <div class="form-group">
+    <%= f.label :email,"correo electrónico" %><br />
+    <%= f.email_field :email, autofocus: true  %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :password, "Contraseña" %><br />
+    <%= f.password_field :password, autocomplete: "off"  %>
+  </div>
+  <div class="actions">
+    <%= f.submit "iniciar sesión" %>
+  </div>
+  <br>
+<% end %>
