@@ -7,5 +7,5 @@ Rails.application.routes.draw do
   post '/login',   to: 'sessions#create'
   delete '/log_out' => 'sessions#destroy', as: :log_out
 
-  get '/sign_in' => 'registration#new', as: :sign_in
+  get '/sign_in' => 'registrations#new', as: :sign_in
 end
