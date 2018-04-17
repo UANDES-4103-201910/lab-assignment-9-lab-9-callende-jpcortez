@@ -24,19 +24,19 @@ class UsersController < ApplicationController
   # POST /users
   # POST /users.json
   def create
-    
+    #complete this method
   end
 
   # PATCH/PUT /users/1
   # PATCH/PUT /users/1.json
   def update
-    
+    #complete this method
   end
 
   # DELETE /users/1
   # DELETE /users/1.json
   def destroy
-    
+    #complete this method
   end
 
   private
@@ -47,6 +47,6 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.fetch(:user, {})
+    params.require(:user).permit(:name, :last_name, :email, :password, :phone)
     end
 end
