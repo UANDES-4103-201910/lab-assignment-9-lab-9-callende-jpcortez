@@ -1,5 +1,5 @@
  
-<%= form_for(User.new, html: { multipart: true }) do |f| %>
+<%= form_for(:registrations, url: sign_in_path) do |f| %>
 	<div class="form-group">
 	    <%= f.label :name, "Name" %>
 	    <%= f.text_field :name %>
@@ -12,6 +12,10 @@
 	    <%= f.label :email %>
 	    <%= f.text_field :email %>
 	</div>
+	<div class="form-group">
+      <%= f.label :phone %>
+      <%= f.text_field :phone %>
+  	</div>
 	<div class="form-group">
 	    <%= f.label :password, "Password" %>
 	    <% if @minimum_password_length %>
